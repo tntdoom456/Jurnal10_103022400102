@@ -34,6 +34,12 @@ namespace Jurnal10_103022400102.Controllers
             games.Add(game);
         }
 
+        [HttpPut]
+        public void Put(int id, [FromBody] Game game)
+        {
+            games[id] = game;
+        }
+
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
