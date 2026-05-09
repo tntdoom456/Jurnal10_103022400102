@@ -25,6 +25,11 @@ namespace Jurnal10_103022400102.Controllers
         [HttpGet("{id}")]
         public Game Get(int id)
         {
+            var game = games.FirstOrDefault(g => g.id == id);
+            if (game == null)
+            {
+               return null;
+            }
             return games[id];
         }
 
