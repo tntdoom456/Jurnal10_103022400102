@@ -13,7 +13,9 @@ namespace Jurnal10_103022400102.Controllers
             new Game(2, "Red Dead Redemption 2", "Rockstar Games", 2018, "Action-adventure", 9.8, new string[] { "PlayStation 4", "Xbox One", "PC" }, new string[] { "Single-player", "Multiplayer" }, true, 59),
             new Game(3, "The Witcher 3: Wild Hunt", "CD Projekt Red", 2015, "Action role-playing", 9.7, new string[] { "PlayStation 4", "Xbox One", "PC" }, new string[] { "Single-player" }, false, 39),
             new Game(4, "Minecraft", "Mojang Studios", 2011, "Sandbox, survival", 9.0, new string[] { "PC", "Console", "Mobile" }, new string[] { "Single-player", "Multiplayer" }, true, 26),
-            new Game(5, "Fortnite", "Epic Games", 2017, "Battle royale", 8.5, new string[] { "PC", "Console", "Mobile" }, new string[] { "Multiplayer" }, true, 0)
+            new Game(5, "Fortnite", "Epic Games", 2017, "Battle royale", 8.5, new string[] { "PC", "Console", "Mobile" }, new string[] { "Multiplayer" }, true, 0),
+            new Game(6, "Among Us", "InnerSloth", 2018, "Party, social deduction", 8.0, new string[] { "PC", "Mobile" }, new string[] { "Multiplayer" }, true, 5),
+            new Game(7, "Honkai Impact 3rd", "miHoYo", 2016, "Action role-playing", 8.2, new string[] { "Mobile" }, new string[] { "Single-player" }, true, 0)
         };
 
         [HttpGet]
@@ -25,11 +27,6 @@ namespace Jurnal10_103022400102.Controllers
         [HttpGet("{id}")]
         public Game Get(int id)
         {
-            var game = games.FirstOrDefault(g => g.id == id);
-            if (game == null)
-            {
-               return null;
-            }
             return games[id];
         }
 
